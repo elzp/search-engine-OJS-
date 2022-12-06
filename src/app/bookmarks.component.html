@@ -1,5 +1,5 @@
 <div>
   <h2>Twoje zakładki</h2>
-  <search></search>
+  <search (sendSearchValueEvent)="updateData($event)"></search>
   <p *ngFor="let bookmark of bookmarks">{{ bookmark }}</p>
 </div>
