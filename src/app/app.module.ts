@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { BookmarksComponent } from './bookmarks.component';
 import { PostsComponent } from './posts.component';
 import { NewsComponent } from './news.component';
+import { SearchComponent } from './search.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, BookmarksComponent, PostsComponent, NewsComponent ],
+  declarations: [ AppComponent, BookmarksComponent, PostsComponent, NewsComponent, SearchComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
