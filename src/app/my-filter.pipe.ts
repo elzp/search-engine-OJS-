@@ -12,5 +12,17 @@ export class MyFilterPipe implements PipeTransform {
     if (!items || !filter) {
       return items;
     }
+    if (filter.typeOfFilteredData === 'flatobject') {
+      return items
+        .map((it) => {
+          if (Object.values(it).some((it2: string) => filter.regex.test(it2))) {
+            return it;
+          }
+        })
+        .filter((it) => it !== undefined);
+    }
+    if (filter.typeOfFilteredData === 'flatarray') {
+      return items.filter((it) => filter.regex.test(it));
+    }
   }
 }
