@@ -8,10 +8,18 @@ import { BookmarksComponent } from './bookmarks.component';
 import { PostsComponent } from './posts.component';
 import { NewsComponent } from './news.component';
 import { SearchComponent } from './search.component';
+import { MyFilterPipe } from './my-filter.pipe';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, BookmarksComponent, PostsComponent, NewsComponent, SearchComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    BookmarksComponent,
+    PostsComponent,
+    NewsComponent,
+    SearchComponent,
+    MyFilterPipe,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
