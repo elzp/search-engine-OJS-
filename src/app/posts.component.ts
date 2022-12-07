@@ -13,5 +13,10 @@ export class PostsComponent {
     'Czy warto uczyć się Reacta',
     'Poznaj Przeprogramowanych'
   ]
-  
+  typeOfFilteredData = 'flatarray';
+  regex = new RegExp('');
+
+  updateData(data: string) {
+    this.regex = new RegExp(data);
+  }
 }

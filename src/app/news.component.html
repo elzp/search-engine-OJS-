@@ -1,13 +1,20 @@
 <div>
-	<h2>Wiadomości</h2>
-	<search (sendSearchValueEvent)="updateData($event)"></search>
-	<div class="news" *ngFor="let news of newsList">
-		<div class="row">
-			<img src="https://via.placeholder.com/150" alt="News image">
-			<div class="column">
-				<h3 class="news-head">{{ news.head }}</h3>
-				<span class="news-head">{{ news.lead }}</span>
-			</div>
-		</div>
-	</div>
+  <h2>Wiadomości</h2>
+  <search (sendSearchValueEvent)="updateData($event)"></search>
+  <div
+    class="news"
+    *ngFor="
+      let news of newsList
+        | myfilter
+          : { regex: this.regex, typeOfFilteredData: this.typeOfFilteredData }
+    "
+  >
+    <div class="row">
+      <img src="https://via.placeholder.com/150" alt="News image" />
+      <div class="column">
+        <h3 class="news-head">{{ news.head }}</h3>
+        <span class="news-head">{{ news.lead }}</span>
+      </div>
+    </div>
+  </div>
 </div>

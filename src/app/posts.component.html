@@ -1,5 +1,14 @@
 <div>
   <h2>Najnowsze na blogu</h2>
   <search (sendSearchValueEvent)="updateData($event)"></search>
-  <p class="post" *ngFor="let post of postsList">{{ post }}</p>
+  <p
+    class="post"
+    *ngFor="
+      let post of postsList
+        | myfilter
+          : { regex: this.regex, typeOfFilteredData: this.typeOfFilteredData }
+    "
+  >
+    {{ post }}
+  </p>
 </div>
