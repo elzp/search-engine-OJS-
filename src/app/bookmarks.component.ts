@@ -16,6 +16,6 @@ export class BookmarksComponent {
   regex = new RegExp('');
 
   updateData(data: string) {
-    this.regex = new RegExp(data);
+    this.regex = new RegExp(data, 'i');
   }
 }

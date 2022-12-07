@@ -23,7 +23,6 @@ export class NewsComponent {
   typeOfFilteredData = 'flatobject';
 
   updateData(data: string) {
-    this.regex = new RegExp(data);
+    this.regex = new RegExp(data, 'i');
   }
-
 }
