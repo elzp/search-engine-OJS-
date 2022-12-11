@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { prepareDataForRegExp } from './functions';
 
 @Component({
   selector: 'my-bookmarks',
@@ -7,15 +8,18 @@ import { Component } from '@angular/core';
 export class BookmarksComponent {
   bookmarks = [
     'Przeprogramowani.pl',
-    'overment.com',
+    'overme+nt.com',
     'smyrdek.com',
-    'algosmart.pl',
-    'Przeprogramowani YouTube',
+    'algo(sm=art.pl/%',
+    'Przepro+gramowani YouTube',
+    'google.com/sth',
+    '\\d^gri@y',
   ];
   typeOfFilteredData = 'flatarray';
   regex = new RegExp('');
 
   updateData(data: string) {
-    this.regex = new RegExp(data, 'i');
+    const data1 = prepareDataForRegExp(data);
+    this.regex = new RegExp(`${data1}`, 'i');
   }
 }
