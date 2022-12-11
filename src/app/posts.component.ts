@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { prepareDataForRegExp } from './functions';
 
 @Component({
   selector: 'my-posts',
@@ -16,6 +17,7 @@ export class PostsComponent {
   regex = new RegExp('');
 
   updateData(data: string) {
-    this.regex = new RegExp(data, 'i');
+    const data1 = prepareDataForRegExp(data);
+    this.regex = new RegExp(`${data1}`, 'i');
   }
 }

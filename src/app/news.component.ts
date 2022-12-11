@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { prepareDataForRegExp } from './functions';
 
 @Component({
   selector: 'my-news',
@@ -23,6 +24,7 @@ export class NewsComponent {
   typeOfFilteredData = 'flatobject';
 
   updateData(data: string) {
-    this.regex = new RegExp(data, 'i');
+    const data1 = prepareDataForRegExp(data);
+    this.regex = new RegExp(`${data1}`, 'i');
   }
 }
