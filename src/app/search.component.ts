@@ -10,11 +10,9 @@ export class SearchComponent {
   @Output() sendSearchValueEvent = new EventEmitter<string>();
 
   onKey(event) {
-    // console.log("this.value",this.value, "ev.target" , event.target.value);
     if (this.value !== event.target.value.trim()) {
       this.value = event.target.value;
       this.sendSearchValueEvent.emit(this.value);
     }
-    console.log(this.value);
   }
 }
